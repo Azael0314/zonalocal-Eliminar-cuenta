@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ZonaLocal – Descarga la app</title>
+<meta name="description" content="Encuentra negocios y servicios cerca de ti. Descarga ZonaLocal gratis en Google Play." />
+<link rel="icon" type="image/png" href="icon.png" />
+<link rel="apple-touch-icon" href="icon.png" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: #F3F4F6;
+    color: #111827;
+  }
+
+  .icon { display: inline-flex; flex-shrink: 0; }
+  .icon svg { width: 100%; height: 100%; display: block; }
+
+  .topbar { position: sticky; top: 0; z-index: 10; width: 100%; background: #fff; box-shadow: 0 1px 0 rgba(17,24,39,.08); }
+  .topbar-inner { max-width: 720px; margin: 0 auto; padding: 10px 16px; display: flex; align-items: center; gap: 10px; }
+  .topbar-brand { flex-shrink: 0; display: flex; align-items: center; }
+  .topbar-brand img { width: 32px; height: 32px; object-fit: contain; }
+  .topbar-search { flex: 1; min-width: 0; display: flex; align-items: center; gap: 6px; background: #F3F4F6; border-radius: 20px; padding: 8px 12px; text-decoration: none; color: #9CA3AF; }
+  .topbar-search .icon { width: 15px; height: 15px; }
+  .topbar-search span { font-size: 12.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .topbar-icons { flex-shrink: 0; display: flex; align-items: center; gap: 14px; }
+  .topbar-icons a { color: #111827; display: flex; }
+  .topbar-icons .icon { width: 20px; height: 20px; }
+  .topbar-dl { flex-shrink: 0; display: inline-flex; align-items: center; gap: 5px; background: linear-gradient(135deg,#2196f3,#6eb8f5); color: white; text-decoration: none; font-size: 12px; font-weight: 700; padding: 8px 12px; border-radius: 20px; white-space: nowrap; box-shadow: 0 6px 14px rgba(33,150,243,.3); }
+  .topbar-dl .icon { width: 13px; height: 13px; }
+
+  .hero {
+    background: linear-gradient(135deg, #2196f3 0%, #6eb8f5 100%);
+    padding: 64px 24px 80px;
+    text-align: center;
+    color: white;
+  }
+  .logo {
+    width: 96px; height: 96px;
+    border-radius: 24px;
+    background: rgba(255,255,255,0.18);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 22px rgba(27,58,107,.25);
+  }
+  .logo img { width: 100%; height: 100%; object-fit: cover; }
+  .hero h1 { font-size: 36px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 12px; }
+  .hero p { font-size: 16px; color: rgba(255,255,255,0.9); max-width: 480px; margin: 0 auto 32px; line-height: 1.6; }
+
+  .cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: white; color: #2196f3; font-weight: 700; font-size: 15px;
+    padding: 14px 28px; border-radius: 14px; text-decoration: none;
+    box-shadow: 0 12px 28px rgba(33,150,243,.35);
+  }
+  .cta .icon { width: 18px; height: 18px; }
+
+  .page { max-width: 720px; margin: -40px auto 0; padding: 0 16px 20px; }
+  .card {
+    background: white; border-radius: 24px; overflow: hidden;
+    box-shadow: 0 16px 36px rgba(27,58,107,.16);
+    padding: 40px;
+  }
+
+  .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .feature { background: #e8f5ff; border-radius: 14px; padding: 20px; }
+  .feature .emoji { font-size: 26px; margin-bottom: 10px; }
+  .feature h3 { font-size: 15px; font-weight: 700; color: #2196f3; margin-bottom: 6px; }
+  .feature p { font-size: 13px; color: #4B5563; line-height: 1.6; }
+
+  .demo {
+    text-align: center; margin-top: 24px; padding-top: 24px;
+    border-top: 1px solid #F1F3F6;
+  }
+  .demo p { font-size: 12.5px; color: #6B7280; margin-bottom: 6px; }
+  .demo a { color: #2196f3; font-weight: 700; font-size: 14px; text-decoration: none; }
+  .demo a:hover { text-decoration: underline; }
+
+  .footer {
+    text-align: center; padding: 30px 16px 50px; color: #9CA3AF; font-size: 13px;
+  }
+  .footer .links {
+    margin-bottom: 14px; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px;
+  }
+  .footer a { color: #2196f3; text-decoration: none; font-weight: 600; }
+  .footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 48px 20px 70px; }
+    .hero h1 { font-size: 28px; }
+    .card { padding: 28px 24px; }
+    .features { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+  <nav class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-brand">
+        <img src="icon.png" alt="ZonaLocal" />
+      </div>
+      <a class="topbar-search" href="https://play.google.com/store/apps/details?id=com.zonalocal.app">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.8"/><path d="M20 20l-4.3-4.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        <span>Buscar en ZonaLocal</span>
+      </a>
+      <div class="topbar-icons">
+        <a href="./" class="icon" aria-label="Inicio"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 10.5L12 4l8 6.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 9.5V19a1 1 0 001 1h3v-5a1 1 0 011-1h2a1 1 0 011 1v5h3a1 1 0 001-1V9.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="https://play.google.com/store/apps/details?id=com.zonalocal.app" class="icon" aria-label="Favoritos"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 20.2s-7.6-4.6-9.9-9.3C.6 7.2 2.4 4 5.8 4c2 0 3.5 1.1 4.2 2.6C10.7 5.1 12.2 4 14.2 4c3.4 0 5.2 3.2 3.7 6.9-2.3 4.7-9.9 9.3-9.9 9.3z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></a>
+        <a href="https://play.google.com/store/apps/details?id=com.zonalocal.app" class="icon" aria-label="Carrito"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 8h12l1 12.5a1.5 1.5 0 01-1.5 1.5H6.5A1.5 1.5 0 015 20.5L6 8z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 8V6a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></a>
+      </div>
+      <a class="topbar-dl" href="https://play.google.com/store/apps/details?id=com.zonalocal.app">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 4v11" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M8 11.5l4 4 4-4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 17.5V19a2 2 0 002 2h10a2 2 0 002-2v-1.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span>Descargar</span>
+      </a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="logo"><img src="icon.png" alt="ZonaLocal" /></div>
+    <h1>ZonaLocal</h1>
+    <p>Descubre negocios y servicios cerca de ti, chatea directo con ellos y arma tus pedidos sin salir de tu comunidad.</p>
+    <a class="cta" href="https://play.google.com/store/apps/details?id=com.zonalocal.app">
+      <span class="icon"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><title>Google Play</title><path d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/></svg></span>
+      Descargar en Google Play
+    </a>
+  </div>
+
+  <div class="page">
+    <div class="card">
+      <div class="features">
+        <div class="feature">
+          <div class="emoji">📍</div>
+          <h3>Negocios cerca de ti</h3>
+          <p>Explora tiendas, restaurantes y servicios de tu zona, con fotos, productos y horarios.</p>
+        </div>
+        <div class="feature">
+          <div class="emoji">💬</div>
+          <h3>Chat directo</h3>
+          <p>Habla con el negocio antes de comprar, pregunta por disponibilidad o pide algo a la medida.</p>
+        </div>
+        <div class="feature">
+          <div class="emoji">⭐</div>
+          <h3>Reseñas reales</h3>
+          <p>Ve las opiniones de otros compradores antes de decidir.</p>
+        </div>
+      </div>
+      <div class="demo">
+        <p>¿Quieres ver cómo luce un negocio en ZonaLocal?</p>
+        <a href="https://zonalocal-api-production.up.railway.app/p/business/cms95mdxt00041ypkrkqcyvrj">Ver un negocio de ejemplo →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="links">
+      <a href="privacidad.html">Privacidad</a>
+      <a href="terminos.html">Términos</a>
+      <a href="eliminar-cuenta.html">Eliminar cuenta</a>
+      <a href="seguridad-infantil.html">Seguridad infantil</a>
+    </div>
+    <p>ZonaLocal · soporte@zonalocal.app</p>
+  </div>
+
+</body>
+</html>
